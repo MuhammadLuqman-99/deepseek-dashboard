@@ -9,7 +9,7 @@ document.getElementById('ecommerceForm').addEventListener('submit', function(e) 
         channel: this.channel.value
     };
     
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwdE0wdjWNpCal5TRyijxIg-gIp6dAxwNnNSihRTmlhzjf8R7vCljVwW28UIv_eCOo/exec';
+    const scriptURL = 'hhttps://script.google.com/macros/s/AKfycbyD288YXO--KuUtrynCux07QwKaZ_kagzCdjl0Y9xJyHlhI5Z8apYnf_t5dTEHRI05a/exec';
     
     fetch(scriptURL, {
         method: 'POST',
