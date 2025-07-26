@@ -1,0 +1,46 @@
+const doPost = (e) => {
+  const sheetName = determineSheet(e.postData.contents);
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
+  const data = JSON.parse(e.postData.contents);
+  
+  let values;
+  if (sheetName === 'eCommerce') {
+    values = [[
+      data.tarikh,
+      parseFloat(data.sales),
+      parseInt(data.order),
+      parseFloat(data.avg_order),
+      data.channel
+    ]];
+  } else if (sheetName === 'Marketing') {
+    values = [[
+      data.tarikh,
+      parseFloat(data.spend),
+      parseFloat(data.roas),
+      parseInt(data.impressions)
+    ]];
+  } else if (sheetName === 'SalesTeam') {
+    values = [[
+      data.tarikh,
+      data.agent,
+      parseInt(data.leads),
+      parseFloat(data.close_rate),
+      parseFloat(data.sales)
+    ]];
+  }
+  
+  sheet.appendRow(values[0]);
+  return ContentService.createTextOutput('Success');
+};
+
+function determineSheet(data) {
+  const json = JSON.parse(data);
+  if (json.channel) return 'eCommerce';
+  if (json.spend) return 'Marketing';
+  if (json.agent) return 'SalesTeam';
+  return 'Unknown';
+}
+
+
+https://script.google.com/macros/s/AKfycbwdE0wdjWNpCal5TRyijxIg-gIp6dAxwNnNSihRTmlhzjf8R7vCljVwW28UIv_eCOo/exec
+AKfycbwdE0wdjWNpCal5TRyijxIg-gIp6dAxwNnNSihRTmlhzjf8R7vCljVwW28UIv_eCOo

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCommerce Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-blue-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">eCommerce Form</h1>
+            <div class="space-x-4">
+                <a href="index.html" class="hover:underline">Dashboard</a>
+                <a href="ecommerce.html" class="hover:underline font-bold">eCommerce</a>
+                <a href="marketing.html" class="hover:underline">Marketing</a>
+                <a href="salesteam.html" class="hover:underline">Sales Team</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto p-4 max-w-2xl">
+        <div class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-xl font-semibold mb-4">Input Data eCommerce</h2>
+            <form id="ecommerceForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2">Tarikh</label>
+                    <input type="date" name="tarikh" required class="w-full px-3 py-2 border rounded">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2">Sales (RM)</label>
+                    <input type="number" name="sales" required class="w-full px-3 py-2 border rounded">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2">Bilangan Order</label>
+                    <input type="number" name="order" required class="w-full px-3 py-2 border rounded">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2">Purata Nilai Order (RM)</label>
+                    <input type="number" step="0.01" name="avg_order" required class="w-full px-3 py-2 border rounded">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 mb-2">Channel</label>
+                    <select name="channel" required class="w-full px-3 py-2 border rounded">
+                        <option value="Website">Website</option>
+                        <option value="App">Mobile App</option>
+                        <option value="Shopee">Shopee</option>
+                        <option value="Lazada">Lazada</option>
+                        <option value="TikTok">TikTok Shop</option>
+                    </select>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Hantar Data</button>
+            </form>
+            <div id="message" class="mt-4"></div>
+        </div>
+    </div>
+
+    <script src="js/ecommerce.js"></script>
+</body>
+</html>
